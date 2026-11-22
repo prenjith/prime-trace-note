@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+body { font-family: Georgia, "Times New Roman", serif; max-width: 820px; margin: 32px auto; line-height: 1.55; color: #111; }
+h1 { font-size: 27px; border-bottom: 1px solid #bbb; padding-bottom: 6px; }
+h2 { font-size: 20px; margin-top: 26px; }
+h3 { font-size: 17px; }
+code { font-family: Menlo, monospace; font-size: 90%; }
+pre { background: #f5f5f5; padding: 10px; overflow-x: auto; }
+.page-break { page-break-before: always; }
+a { color: #0645ad; }
+</style>
+<script>
+MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head><body>
+<h1>Shell cutoff note</h1>
+<p><strong>Reference:</strong> Alessandro Maria Masullo, <em>The Music of the Primes</em>, Chapter 11, §11.3.2, Theorem 11.3.2.1, pp. 493–496, particularly equation (11.3.2.3).</p>
+<p><strong>Manuscript:</strong> https://math216.wordpress.com/wp-content/uploads/2026/11/the-music-of-the-primes.pdf</p>
+<h2>1. Mathematical obstruction</h2>
+<p>The proof introduces a decreasing filtration of divisorial strata:</p>
+<p>$$
+E_{k+1}\subseteq E_k,
+$$</p>
+<p>with indicator functions</p>
+<p>$$
+\alpha_k=\mathbf{1}_{E_k}.
+$$</p>
+<p>The shell operator involves the multiplier</p>
+<p>$$
+\alpha_{k+1}(y)-\alpha_k(y).
+$$</p>
+<p>In equation (11.3.2.3), an additional cutoff $\alpha_j(y)$ is applied to the same variable, with $j\to\infty$.</p>
+<p>For every $j\geq k+1$,</p>
+<p>$$
+E_j\subseteq E_{k+1}\subseteq E_k.
+$$</p>
+<p>Consequently, for every $y$,</p>
+<p>$$
+\boxed{
+\alpha_j(y)\bigl(\alpha_{k+1}(y)-\alpha_k(y)\bigr)=0.
+}
+$$</p>
+<p><strong>Proof:</strong> If $y\notin E_j$, then $\alpha_j(y)=0$. If $y\in E_j$, then $y\in E_{k+1}\subseteq E_k$, so $\alpha_{k+1}(y)=\alpha_k(y)=1$. Either way, the product is zero.</p>
+<p>This identity holds pointwise, not merely almost everywhere or in an asymptotic sense.</p>
+<h2>2. Consequence for the trace calculation</h2>
+<p>Any integral containing this product as a multiplicative factor is therefore identically zero for all $j\geq k+1$, provided the indicators act on the same kernel variable as displayed.</p>
+<p>In particular,</p>
+<p>$$
+\lim_{j\to\infty}
+\int
+\alpha_j(y)
+\bigl(\alpha_{k+1}(y)-\alpha_k(y)\bigr)
+K(x,y)\,d\mu(y)
+=0
+$$</p>
+<p>whenever the expression is defined.</p>
+<p>However, Theorem 11.3.2.1 seeks to recover a generally nonzero local prime-power contribution.</p>
+<p>For the rational field $\mathbb Q$, consider the shell at $p=2$ and a nonnegative smooth radial test function concentrated near idelic norm $2$, with value $1$ at that norm. The claimed local expression contains a positive contribution at the corresponding prime-power term, assuming the displayed normalization.</p>
+<p>The proposed cutoff calculation therefore cannot recover the asserted nonzero trace.</p>
+<h2>3. Mathematical significance</h2>
+<p>The problem is structural: the cutoff projects onto a region disjoint from the shell on which the original kernel is supported.</p>
+<p>No dominated-convergence argument can change the exact identity</p>
+<p>$$
+\alpha_j(\alpha_{k+1}-\alpha_k)=0.
+$$</p>
+<p>The calculation would require a modified cutoff that preserves the shell, followed by a separate proof that the modified approximation converges in the sense required for the trace.</p>
+<p>This affects the justification of the geometric trace calculation subsequently used in Chapter 12, including Theorem 12.5.1.1.</p>
+<h2>4. Scope of the objection</h2>
+<p>This establishes a mathematical defect in the printed cutoff argument. It does not, by itself, prove that the desired trace identity is false or that no alternative derivation exists.</p>
+<p>The same underlying obstruction has already been documented in this issue. This comment provides an independent, elementary verification of the exact pointwise identity.</p>
+<p><strong>Conclusion:</strong> The cutoff limit in equation (11.3.2.3), as printed, cannot establish the nonzero shell trace asserted by Theorem 11.3.2.1. A replacement argument is necessary before this step can support the later trace formula.</p>
+<div class="page-break"></div>
+<h1>Prime-2 counterexample at zero spectral width</h1>
+<p><strong>Paper:</strong> Alessandro Maria Masullo, <em>The Music of the Primes</em> (20 November 2026 draft)</p>
+<p><strong>Location:</strong> Definition 10.4.3.7 (p. 473), Theorem 12.5.1.1 (pp. 519–520), equations (12.5.1.1)–(12.5.1.4).</p>
+<p><strong>Claim:</strong> The published trace formula, interpreted with its explicitly permitted zero-width spectral interval, is mathematically false. An explicit family of admissible smooth test functions gives a nonzero limit on the geometric side and a zero limit on the displayed spectral side.</p>
+<h2>1. Permitted specialization</h2>
+<p>Definition 10.4.3.7 allows compact intervals</p>
+<p>$$
+I=[-\alpha,\alpha],\qquad \alpha\geq0.
+$$</p>
+<p>In particular, choose</p>
+<p>$$
+F=\mathbb Q,\qquad I={0}.
+$$</p>
+<p>Theorem 12.5.1.1 describes its spectral sum as running over zeros in the <strong>interior</strong> of the relative vertical strip</p>
+<p>$$
+\Omega(C_F)_I
+=
+{c\in\Omega(C_F):\sigma(c)\in 1/2+I},
+$$</p>
+<p>where $\sigma(c)=\operatorname{Re}(c)$. Its interior is</p>
+<p>$$
+{c\in\Omega(C_F):|\sigma(c)-1/2|&lt;\alpha}.
+$$</p>
+<p>For $\alpha=0$, this interior is empty.</p>
+<p>Consequently, the displayed spectral sum vanishes identically, regardless of the location of any zeta zeros.</p>
+<p>The theorem therefore asserts that its geometric expression equals only the two pole contributions:</p>
+<p>$$
+G(\varphi)
+=
+M(\varphi)(|\cdot|^{1/2})
++
+M(\varphi)(|\cdot|^{-1/2}).
+\tag{1}
+$$</p>
+<p>I will exhibit smooth compactly supported test functions for which this identity is impossible.</p>
+<h2>2. Construct an explicit test family</h2>
+<p>Choose a nonnegative function</p>
+<p>$$
+b\in C_c^\infty((-1,1)),\qquad b(0)=1.
+$$</p>
+<p>For sufficiently small $\delta&gt;0$, define the radial test function on the idele class group of $\mathbb Q$ by</p>
+<p>$$
+\varphi_\delta(g)
+=
+b\left(
+\frac{\log|g|-\log2}{\delta}
+\right).
+$$</p>
+<p>Its support lies in the norm interval</p>
+<p>$$
+2e^{-\delta}&lt;|g|&lt;2e^\delta.
+$$</p>
+<p>For $\delta&lt;\log2$, we have</p>
+<p>$$
+\varphi_\delta(1)=0,
+$$</p>
+<p>so it satisfies the explicit test-function condition of Theorem 12.5.1.1.</p>
+<p>The support can be chosen sufficiently narrow to contain no positive integral prime power other than $2$.</p>
+<h2>3. Evaluate the geometric side</h2>
+<p>Consider the non-Archimedean part of (12.5.1.1)–(12.5.1.2).</p>
+<p>For every prime $p\ne2$, the relevant valuation shells have norms $p^n$, none of which lie in the support of $\varphi_\delta$, once $\delta$ is sufficiently small.</p>
+<p>Therefore every such local contribution vanishes.</p>
+<p>At $p=2$, the valuation shell with</p>
+<p>$$
+|g|_2=2
+$$</p>
+<p>contributes.</p>
+<p>On this shell,</p>
+<p>$$
+|1-g|_2=2.
+$$</p>
+<p>Thus</p>
+<p>$$
+\frac{|g|_2^{1/2}}{|1-g|_2}
+=
+\frac{1}{\sqrt2}.
+$$</p>
+<p>Since $\varphi_\delta(g)=b(0)=1$ throughout this shell, the local integral equals</p>
+<p>$$
+\frac{\mu_2(\mathbb Z_2^\times)}{\sqrt2}.
+$$</p>
+<p>The normalization factor printed in the theorem is</p>
+<p>$$
+\frac{\log2}{\mu_2(\mathbb Z_2^\times)}.
+$$</p>
+<p>Hence the complete non-Archimedean contribution is exactly</p>
+<p>$$
+\boxed{
+G_{\mathrm{fin}}(\varphi_\delta)
+=
+\frac{\log2}{\sqrt2}.
+}
+\tag{2}
+$$</p>
+<p>This expression is independent of $\delta$.</p>
+<p>The Archimedean term is an ordinary integral supported near real numbers of absolute value $2$. Its denominator $|1-g|$ stays uniformly separated from zero on this support, and the Haar measure of the support is $O(\delta)$.</p>
+<p>Therefore,</p>
+<p>$$
+G_\infty(\varphi_\delta)=O(\delta).
+$$</p>
+<p>Combining the local terms gives</p>
+<p>$$
+\boxed{
+G(\varphi_\delta)
+=
+\frac{\log2}{\sqrt2}+O(\delta).
+}
+\tag{3}
+$$</p>
+<p>In particular,</p>
+<p>$$
+\lim_{\delta\to0^+}G(\varphi_\delta)
+=
+\frac{\log2}{\sqrt2}&gt;0.
+$$</p>
+<h2>4. Evaluate the claimed spectral side</h2>
+<p>Because $I={0}$, the interior spectral sum is empty.</p>
+<p>The right-hand side of Theorem 12.5.1.1 consists solely of its two pole terms.</p>
+<p>For either $s=1/2$ or $s=-1/2$, the Mellin transform of the radial test function is</p>
+<p>$$
+M_s(\varphi_\delta)
+=
+\int_0^\infty
+b\left(\frac{\log t-\log2}{\delta}\right)t^s\frac{dt}{t},
+$$</p>
+<p>using the standard normalized Haar measure on the norm-one component.</p>
+<p>Substituting</p>
+<p>$$
+t=2e^{\delta u}
+$$</p>
+<p>gives</p>
+<p>$$
+M_s(\varphi_\delta)
+=
+\delta\,2^s
+\int_{-1}^{1}b(u)e^{s\delta u}\,du.
+$$</p>
+<p>Since $b$ is smooth and compactly supported,</p>
+<p>$$
+M_{1/2}(\varphi_\delta)=O(\delta),
+$$</p>
+<p>and</p>
+<p>$$
+M_{-1/2}(\varphi_\delta)=O(\delta).
+$$</p>
+<p>Thus the claimed spectral side satisfies</p>
+<p>$$
+\boxed{
+S(\varphi_\delta)=O(\delta).
+}
+\tag{4}
+$$</p>
+<p>Consequently,</p>
+<p>$$
+\lim_{\delta\to0^+}S(\varphi_\delta)=0.
+$$</p>
+<h2>5. Contradiction</h2>
+<p>Theorem 12.5.1.1 requires</p>
+<p>$$
+G(\varphi_\delta)=S(\varphi_\delta)
+$$</p>
+<p>for every admissible $\delta$.</p>
+<p>But equations (3) and (4) imply</p>
+<p>$$
+\frac{\log2}{\sqrt2}+O(\delta)=O(\delta).
+$$</p>
+<p>Taking $\delta\to0^+$ yields</p>
+<p>$$
+\boxed{
+\frac{\log2}{\sqrt2}=0,
+}
+$$</p>
+<p>which is impossible.</p>
+<p>Therefore the displayed trace identity cannot hold with the zero-width interval and strict-interior spectral sum as stated.</p>
+<p>This counterexample uses only elementary local-field valuations, Haar integration, and smooth compactly supported functions. It does not assume the Riemann Hypothesis or the existence of zeros off the critical line.</p>
+<h2>6. Implications and possible repairs</h2>
+<p>The problem is that the strict-interior spectral restriction loses contributions when the interval collapses to zero width, while the geometric expression retains its prime-power contribution.</p>
+<p>A proposed correction would have to explain at least one of the following:</p>
+<ol>
+<li>Why $I={0}$ should be excluded despite the parameter range in Definition 10.4.3.7.</li>
+<li>Whether zero-width spectral data must include boundary evaluations rather than a strict-interior sum.</li>
+<li>How the geometric expression changes with the spectral interval if a restricted-zero formula is intended.</li>
+<li>How the corrected identity follows from the geometric and spectral kernel constructions.</li>
+</ol>
+<p>Excluding $\alpha=0$ would avoid this particular counterexample, but would not by itself justify the comparison between the window-dependent spectral expression and the window-independent geometric expression.</p>
+<p><strong>Conclusion:</strong> Theorem 12.5.1.1, under the stated zero-width specialization and strict-interior interpretation, admits an explicit unconditional counterexample. A modified statement and a new justification of the spectral/geometric comparison are necessary.</p>
+<p>This establishes failure of the printed formula in the specified case, not impossibility of every conceivable replacement trace formula.</p>
+</body></html>
