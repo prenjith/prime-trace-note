@@ -1,6 +1,6 @@
 # Notes on *The Music of the Primes*
 
-Two independent notes and a compilation of twenty further objections on the 20 November 2026 draft by Alessandro Maria Masullo.
+Two independent notes, a consolidated counterexample, and a compilation of twenty further objections on the 20 November 2026 draft by Alessandro Maria Masullo.
 
 **Download the typeset PDF:** [notes-on-the-music-of-the-primes.pdf](notes-on-the-music-of-the-primes.pdf)
 
@@ -13,5 +13,8 @@ Two independent notes and a compilation of twenty further objections on the 20 N
    $\log 2/\sqrt 2$.
 3. **Twenty additional mathematical objections** — a compilation of previously
    reported issues across the analytic, spectral, and trace-formula arguments.
+4. **Mathematical counterexample and structural objections to the main trace
+   formula** — a consolidated note on the zero-width specialization and the
+   surrounding proof steps.
 
 Markdown sources are in `source/`.
