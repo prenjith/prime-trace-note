@@ -1,7 +1,15 @@
 # Notes on *The Music of the Primes*
 
-Independent notes on the 20 November 2026 draft.
+Two independent notes on the 20 November 2026 draft by Alessandro Maria Masullo.
 
-- [Shell cutoff note](shell-cutoff-note.md)
-- [Prime-2 counterexample at zero spectral width](counterexample-12.5.1.1.md)
-- [Typeset PDF of both notes](notes.pdf)
+**Download the typeset PDF:** [notes-on-the-music-of-the-primes.pdf](notes-on-the-music-of-the-primes.pdf)
+
+## Contents
+
+1. **Shell cutoff note** — the cutoff in (11.3.2.3) projects onto a region
+   disjoint from the shell, so the product vanishes pointwise.
+2. **Prime-2 counterexample at zero spectral width** — with $I=\{0\}$ the
+   interior spectral sum is empty while the geometric side retains
+   $\log 2/\sqrt 2$.
+
+Markdown sources are in `source/`.
