@@ -1,6 +1,6 @@
 # Notes on *The Music of the Primes*
 
-Two independent notes on the 20 November 2026 draft by Alessandro Maria Masullo.
+Two independent notes and a compilation of twenty further objections on the 20 November 2026 draft by Alessandro Maria Masullo.
 
 **Download the typeset PDF:** [notes-on-the-music-of-the-primes.pdf](notes-on-the-music-of-the-primes.pdf)
 
@@ -11,5 +11,7 @@ Two independent notes on the 20 November 2026 draft by Alessandro Maria Masullo.
 2. **Prime-2 counterexample at zero spectral width** — with $I=\{0\}$ the
    interior spectral sum is empty while the geometric side retains
    $\log 2/\sqrt 2$.
+3. **Twenty additional mathematical objections** — a compilation of previously
+   reported issues across the analytic, spectral, and trace-formula arguments.
 
 Markdown sources are in `source/`.
