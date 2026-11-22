@@ -1,4 +1,4 @@
-# Explicit prime-2 counterexample to Theorem 12.5.1.1 at zero spectral width
+# Prime-2 counterexample at zero spectral width
 
 **Paper:** Alessandro Maria Masullo, *The Music of the Primes* (20 November 2026 draft)
 
