@@ -25,10 +25,16 @@ Theorem 12.5.1.1 describes its spectral sum as running over zeros in the **inter
 $$
 \Omega(C_F)_I
 =
-\{c:|\operatorname{Re}(c)-1/2|<\alpha\}.
+\{c\in\Omega(C_F):\sigma(c)\in 1/2+I\},
 $$
 
-For $\alpha=0$, this set is empty.
+where $\sigma(c)=\operatorname{Re}(c)$. Its interior is
+
+$$
+\{c\in\Omega(C_F):|\sigma(c)-1/2|<\alpha\}.
+$$
+
+For $\alpha=0$, this interior is empty.
 
 Consequently, the displayed spectral sum vanishes identically, regardless of the location of any zeta zeros.
 
