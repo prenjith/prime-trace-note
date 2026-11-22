@@ -1,3 +1,5 @@
+**See also:** [Explicit prime-2 counterexample to Theorem 12.5.1.1 at zero spectral width](counterexample-12.5.1.1.md)
+
 # Note on the shell cutoff in *The Music of the Primes*
 
 **Reference:** Alessandro Maria Masullo, *The Music of the Primes*, Chapter 11, §11.3.2, Theorem 11.3.2.1, pp. 493–496, particularly equation (11.3.2.3).
